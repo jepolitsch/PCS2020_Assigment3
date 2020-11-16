@@ -136,6 +136,23 @@ for x in data:
 results.close()
 
 #7) MS
+
+def ms(arr, n):
+    half = int(n/2)
+    first = sorted(arr[0:((half))])
+    second = sorted(arr[half:n])
+    return(sorted(first+second))
+
+data = open('rosalind_ms.txt', 'r')
+result = open('results.txt', 'w')
+line = data.readlines()
+first = line[0].split()
+n = int(first[0])
+arr = list(map(int, line[1].rstrip().split()))
+add = ms(arr, n)
+result.write(''.join(str(add).replace(',','').replace('[','').replace(']','')))
+result.close()
+
 #8) PAR
 #9) 3SUM
 #10) INV
