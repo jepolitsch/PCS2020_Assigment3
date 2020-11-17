@@ -154,8 +154,29 @@ result.write(''.join(str(add).replace(',','').replace('[','').replace(']','')))
 result.close()
 
 #8) PAR
+
+def par(arr, k):
+    new = []
+    for x in arr:
+        if x < k:
+            new.insert(0, x)
+        else:
+            new.append(x)
+    return(new)
+    
+data = open('rosalind_par.txt', 'r')
+result = open('results.txt', 'w')
+line = data.readlines()
+k = int(line[0])
+arr = list(map(int, line[1].rstrip().split()))
+print(par(arr, k))
+#result.write(''.join(str(add).replace(',','').replace('[','').replace(']','')))
+result.close()
+
 #9) 3SUM
 #10) INV
+
+
 #11) PAR3
 #12) MED
 
