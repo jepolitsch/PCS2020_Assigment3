@@ -170,13 +170,67 @@ line = data.readlines()
 k = int(line[0])
 arr = list(map(int, line[1].rstrip().split()))
 print(par(arr, k))
-#result.write(''.join(str(add).replace(',','').replace('[','').replace(']','')))
-result.close()
 
 #9) 3SUM
+
+
+
 #10) INV
+
+def inv(arr):
+    arr = [int(i) for i in arr]
+    sortarr = sorted(arr)
+    ret = 0
+    while len(arr) > 0:
+        b = sortarr.index(arr[0])
+        ret += b
+        sortarr.pop(sortarr.index(arr[0]))
+        arr.pop(0)
+    return(ret)
+
+data = open('rosalind_inv.txt', 'r')
+result = open('results.txt', 'w')
+line = data.readlines()
+k = int(line[0])
+arr = list(map(int, line[1].rstrip().split()))
+print(inv(arr))
+result.write(''.join(str(add).replace(',','').replace('[','').replace(']','')))
+result.close()
 
 
 #11) PAR3
+
+def par3(arr, k):
+    a, b, c, d = [], [], [], []
+    for x in arr:
+        if x < k:
+            a.append(x)
+        elif x == k:
+            b.append(x)
+        else:
+            c.append(x)
+    d = [a+b+c]
+    return (str(d))
+    
+data = open('rosalind_par3.txt', 'r')
+result = open('results.txt', 'w')
+line = data.readlines()
+arr = list(map(int, line[1].rstrip().split()))
+k = int(arr[0])
+result.write((''.join(par3(arr, k)).replace(',','').replace('[','').replace(']','')))
+result.close()
+
 #12) MED
+
+def med(arr, k):
+    sortarr = sorted(arr)
+    return(sortarr[k-1])
+
+data = open('rosalind_med.txt', 'r')
+line = data.readlines()
+arr = list(map(int, line[1].rstrip().split()))
+n = line[0]
+k = int(line[2])
+print(med(arr,k))
+
 
