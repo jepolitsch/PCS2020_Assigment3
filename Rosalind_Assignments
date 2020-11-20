@@ -173,6 +173,14 @@ print(par(arr, k))
 
 #9) 3SUM
 
+def threesum(arr):
+    x = [-1]
+    setarr = sorted(set(arr))
+    for lst in itertools.combinations(setarr, 3):
+        if sum(lst) == 0:
+            x = [arr.index(lst[0])+1 ,arr.index(lst[1])+1, arr.index(lst[2])+1]
+            return(x)
+    return(x)
 
 
 #10) INV
