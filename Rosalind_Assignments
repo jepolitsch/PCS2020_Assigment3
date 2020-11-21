@@ -181,6 +181,17 @@ def threesum(arr):
             x = [arr.index(lst[0])+1 ,arr.index(lst[1])+1, arr.index(lst[2])+1]
             return(x)
     return(x)
+    
+data = open('rosalind_3sum.txt', 'r')
+result = open('results.txt', 'w')
+line = data.readlines()
+first = list(map(int, line[0].rstrip().split()))
+n = int(first[0])
+for k in range(n):
+    arr = tuple(map(int, line[k+1].split()))
+    result.write(((freesum(arr)).replace(',','').replace('[','').replace(']','')))
+    result.write('\n')
+result.close()
 
 
 #10) INV
